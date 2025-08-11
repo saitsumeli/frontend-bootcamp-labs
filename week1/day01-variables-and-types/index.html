@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 - User Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <h1>User Information Form</h1>
+        
+        <form id="userForm">
+            <div class="form-group">
+                <label for="nameInput">Full Name</label>
+                <input type="text" id="nameInput" name="name" placeholder="Full Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="emailInput">E-Mail</label>
+                <input type="email" id="emailInput" name="email" placeholder="E-Mail" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ageInput">Age</label>
+                <input type="number" id="ageInput" name="age" placeholder="Age">
+            </div>
+
+            <div class="form-group">
+                <label for="highSchoolInput">High School You Graduated From</label>
+                <input type="text" id="highSchoolInput" name="highSchool" placeholder="High School Name">
+            </div>
+
+            <button type="submit" id="showButton">Göster</button>
+        </form>
+
+        <section id="result"></section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
