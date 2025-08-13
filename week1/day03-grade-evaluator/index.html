@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grading System (Day 3)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Grading System</h1>
+
+        <form action="">
+            <label for="">Full Name
+                <input id="nameInput" type="text" placeholder="Student Name" name="nameInput" required>
+            </label>
+            <label for="">Course Name
+                <input id="courseInput" type="text" placeholder="Course Name" name="courseInput" required>
+            </label>
+            <label for="">Note
+                <input id="noteInput" type="text" placeholder="Note" name="noteInput" required>
+            </label>
+
+            <button id="showBtn" type="submit">Show</button>
+        </form>
+
+        <section id="result" class="result hidden" aria-live="polite"></section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

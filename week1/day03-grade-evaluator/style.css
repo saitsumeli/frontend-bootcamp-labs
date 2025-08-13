@@ -1,0 +1,97 @@
+:root {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    /*Tüm elementlerde padding ve border genişlik hesaplamasına dahil olur */
+}
+
+body {
+    margin: 0;
+    /* Varsayılan sayfa boşluğunu sıfırla */
+    background: #0f172a;
+    /* Koyu lacivert/mor arka plan */
+    color: #e5e7eb;
+    /* Açık gri metin rengi */
+}
+
+.container {
+    max-width: 720px;
+    /* İçeriğin maksimum genişliği */
+    margin: 48px auto;
+    /* Üst/alt 48px boşluk, yatayda ortala */
+    padding: 24px;
+    /* İç boşluk */
+    background: #111827;
+    /* Koyu gri arka plan */
+    border-radius: 16px;
+    /* Köşeleri yuvarlat */
+}
+
+h1 {
+    margin-top: 0;
+    /* Yukarıdaki boşluğu sıfırla */
+    font-size: 1.5rem;
+    /* Orta büyüklükte başlık boyutu */
+}
+
+form {
+    display: grid;
+    gap: 12px;
+    /* grid elemanları arası boşluk */
+    grid-template-columns: 1fr 1fr;
+    /* İki eşit sütun (1fr = mevcut alanın 1 bölümü) */
+}
+
+form label {
+    display: grid;
+    /* Label içindeki yazı + input'u alt alta yerleştir */
+    gap: 6px;
+    /* Etiket ile input arası boşluk */
+    font-size: .95rem;
+    /* Biraz küçük metin */
+}
+
+form input {
+  padding: 10px 12px; /* İç boşluk */
+  border: 1px solid #374151; /* Koyu gri kenarlık */
+  border-radius: 10px; /* Yuvarlatılmış köşe */
+  background: #0b1220; /* Koyu arka plan */
+  color: #e5e7eb; /* Açık gri yazı */
+}
+
+#showBtn {
+  grid-column: 1 / -1; /* Butonun tüm sütunlara yayılmasını sağlar */
+  padding: 12px 16px; /* İç boşluk */
+  border: 0; /* Kenarlık yok */
+  border-radius: 10px; /* Yuvarlak köşe */
+  background: #2563eb; /* Mavi arka plan */
+  color: white; /* Beyaz yazı */
+  cursor: pointer; /* Üzerine gelince imleç el şekline dönüşür */
+  font-weight: 600; /* Kalın yazı */
+}
+.result {
+  margin-top: 16px; /* Üstten boşluk */
+  padding: 12px 14px; /* İç boşluk */
+  border-radius: 10px; /* Yuvarlak köşe */
+}
+
+.hidden {
+  display: none; /* Görünmez yap */
+}
+
+.pass {
+  background: #064e3b; /* Yeşil arka plan */
+  color: #d1fae5; /* Açık yeşil yazı */
+}
+
+.fail {
+  background: #7f1d1d; /* Kırmızı arka plan */
+  color: #fee2e2; /* Açık kırmızı yazı */
+}
+
+.neutral {
+  background: #1f2937; /* Koyu gri arka plan */
+  color: #e5e7eb; /* Açık gri yazı */
+}
