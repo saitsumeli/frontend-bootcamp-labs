@@ -9,7 +9,6 @@ Amaç: Basit bir öğrenci yönetim sistemi yapmak ve temel **DOM manipülasyonu
 - Dinamik tablo render etme.
 - CSS ile **duruma göre satır rengi** ve **rozet** gösterme.
 - Formu sıfırlama ve odak ayarlama.
-- (Gelecek adım) Sil butonu ekleme.
-- (Gelecek adım) `localStorage` ile veriyi saklama.
+- Silme butonu.
 
 ## 📂 Dosya Yapısı
