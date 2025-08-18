@@ -1,0 +1,235 @@
+/* ====== Temel Ayarlar & Değişkenler ====== */
+:root{
+  --bg: #0b0d10;            /* arka plan (koyu tema) */
+  --panel: #12161b;         /* kart/panel zemini */
+  --text: #e7eaee;          /* ana metin rengi */
+  --muted: #9aa4af;         /* ikincil metin */
+  --border: #2a3139;        /* ince sınırlar */
+  --accent: #4da3ff;        /* vurgu rengi (buton/odak) */
+  --success: #2ecc71;       /* geçti rozet rengi */
+  --danger: #e74c3c;        /* kaldı rozet rengi */
+  --success-bg: #13251b;    /* geçti satır zemin */
+  --danger-bg: #271516;     /* kaldı satır zemin */
+  --radius: 14px;           /* genel radius */
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 20% -10%, #17202a 0%, #0b0d10 55%) no-repeat, var(--bg);
+  line-height: 1.5;
+}
+
+/* ====== Konteyner ====== */
+.container {
+  max-width: 980px;
+  margin: 48px auto;
+  padding: 0 16px 32px;
+}
+
+/* ====== Başlık ====== */
+h1 {
+  margin: 0 0 20px;
+  font-size: clamp(24px, 2.2vw, 34px);
+  letter-spacing: .3px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #ffffff, #a7c8ff 55%, #6ab0ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ====== Form Kartı ======
+   - Grid dizilimi masaüstünde 4 kolon
+   - Mobilde otomatik tek kolona düşer
+   - Odak/hover durumları net */
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr auto;
+  gap: 12px;
+  align-items: end;
+  margin: 14px 0 22px;
+  padding: 16px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+form label {
+  display: grid;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+form input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  color: var(--text);
+  background: #0f1317;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+form input::placeholder { color: #7f8a95; }
+
+form input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 25%, transparent);
+  background: #0d1115;
+}
+
+/* ====== Birincil Buton ====== */
+button[type="submit"] {
+  padding: 11px 18px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  color: #04121e;
+  background: linear-gradient(180deg, #78bdff 0%, #4da3ff 100%);
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease, filter .15s ease;
+  box-shadow: 0 6px 14px rgba(77,163,255,.25);
+}
+button[type="submit"]:hover { filter: brightness(1.05); }
+button[type="submit"]:active { transform: translateY(1px) scale(.99); }
+
+/* ====== Tablo Kapsayıcı (overflow) ======
+   - Mobilde yatay kaydırma gerekebilir */
+table {
+  width: 100%;
+  border-collapse: separate; /* shadow için ayrı kullanmak daha iyi */
+  border-spacing: 0;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+/* Tablo başlığı: yapışkan + bulanık cam efekti */
+thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: color-mix(in oklab, var(--panel) 80%, #1b232c 20%);
+  backdrop-filter: saturate(120%) blur(6px);
+  color: #eaf3ff;
+  font-weight: 700;
+  text-align: left;
+  font-size: 14px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+th:first-child { border-top-left-radius: var(--radius); }
+th:last-child  { border-top-right-radius: var(--radius); }
+
+/* Gövde hücreleri */
+tbody td {
+  border-bottom: 1px solid var(--border);
+  padding: 12px 14px;
+  font-size: 15px;
+}
+
+/* Zebra satırlar + hover */
+tbody tr:nth-child(odd):not(.row-pass):not(.row-fail) { background: #0f1317; }
+tbody tr:nth-child(even):not(.row-pass):not(.row-fail) { background: #0d1115; }
+tbody tr:hover { background: #131920; }
+
+/* Durum bazlı satır renkleri (hafif) */
+.row-pass { background: var(--success-bg) !important; }
+.row-fail { background: var(--danger-bg) !important; }
+
+/* Geçti/Kaldı rozetleri */
+.status-pass,
+.status-fail {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  border: 1px solid transparent;
+}
+
+.status-pass {
+  color: #b8ffd7;
+  background: color-mix(in oklab, var(--success) 20%, transparent);
+  border-color: color-mix(in oklab, var(--success) 55%, transparent);
+}
+
+.status-fail {
+  color: #ffc9c4;
+  background: color-mix(in oklab, var(--danger) 18%, transparent);
+  border-color: color-mix(in oklab, var(--danger) 55%, transparent);
+}
+
+/* İşlem hücresindeki ikon/düğmeler için genel sınıf */
+.action {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  font-size: 13px;
+  background: #0f141a;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: background .15s, border-color .15s, transform .06s;
+}
+.action:hover { background: #151b22; border-color: #394350; }
+.action:active { transform: translateY(1px) scale(.99); }
+
+/* Tablo alt kenarları */
+tbody tr:last-child td:first-child  { border-bottom-left-radius: var(--radius); }
+tbody tr:last-child td:last-child   { border-bottom-right-radius: var(--radius); }
+
+/* ====== Bilgilendirme / boş durum ====== */
+.table-empty {
+  text-align: center;
+  color: var(--muted);
+  padding: 24px 16px;
+}
+
+/* ====== Küçük ekranlar ======
+   - Form tek kolona düşer, buton altta tam genişlik alır */
+@media (max-width: 820px) {
+  form {
+    grid-template-columns: 1fr;
+  }
+  button[type="submit"] {
+    width: 100%;
+    margin-top: 6px;
+  }
+}
+
+/* ====== Işık (Light) Tema Opsiyonu ======
+   - İstersen body'e .light ekleyerek açabilirsin */
+body.light {
+  --bg: #f5f7fb;
+  --panel: #ffffff;
+  --text: #0d1117;
+  --muted: #5b6776;
+  --border: #e6e9ef;
+  --accent: #2f6fec;
+  --success-bg: #eafaf1;
+  --danger-bg: #fdeceb;
+  background: var(--bg);
+}
+body.light h1 {
+  background: linear-gradient(90deg, #111, #3b6ae0 55%, #2f6fec);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+body.light tbody tr:nth-child(odd):not(.row-pass):not(.row-fail) { background: #fbfcfe; }
+body.light tbody tr:nth-child(even):not(.row-pass):not(.row-fail) { background: #f6f8fc; }
+body.light tbody tr:hover { background: #eef3ff; }

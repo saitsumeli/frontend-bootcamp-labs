@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gün 4 – Basit Öğrenci Yönetimi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Basit Öğrenci Yönetimi</h1>
+        <form id="studentForm" autocomplete="off">
+            <label for="nameInput">Name
+                <input id="nameInput" name="nameInput" type="text" required />
+            </label>
+            <label for="courseInput">Course
+                <input type="text" name="courseInput" id="courseInput" required />
+            </label>
+            <label for="noteInput">Note(0-100)
+                <input type="number" min="0" max="100" name="noteInput" id="noteInput" required />
+            </label>
+            <button type="submit">Add</button>
+        </form>
+        <table id="studentTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Note</th>
+                    <th>Situation</th>
+                    <th>Summary</th>
+                    <th>Process</th>
+                </tr>
+            </thead>
+            <tbody><!-- JS ile dolacak kısım --></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
