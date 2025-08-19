@@ -8,7 +8,7 @@ Amaç: Basit bir öğrenci yönetim sistemi yapmak ve temel **DOM manipülasyonu
 - Geçti/Kaldı durumunu nota göre hesaplama.
 - Dinamik tablo render etme.
 - CSS ile **duruma göre satır rengi** ve **rozet** gösterme.
-- Formu sıfırlama ve odak ayarlama.
+- Formu sıfırlama ve odak ayarlama..
 - Silme butonu.
 
 ## 📂 Dosya Yapısı
