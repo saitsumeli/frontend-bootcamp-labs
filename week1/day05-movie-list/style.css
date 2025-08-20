@@ -1,0 +1,16 @@
+:root { font-family: system-ui, Arial, sans-serif; }
+.container { max-width: 900px; margin: 32px auto; padding: 0 16px; }
+h1 { margin-bottom: 16px; }
+
+form { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+form input { padding: 8px; }
+form button { padding: 8px 12px; cursor: pointer; }
+
+.controls { display: flex; gap: 8px; margin: 12px 0 16px; }
+
+table { width: 100%; border-collapse: collapse; }
+thead th { text-align: left; background: #f3f3f3; }
+td, th { padding: 10px; border-bottom: 1px solid #e5e5e5; }
+
+.summary { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; margin-top: 16px; }
+.summary div { background: #fafafa; padding: 10px; border: 1px solid #eee; border-radius: 6px; }
