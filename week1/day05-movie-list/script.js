@@ -5,15 +5,17 @@
 // ==============================
 
 // 1) Başlangıç verisi (gerçek senaryo simülasyonu)
+
 let movies = [
-  // Not: id, silme için işimize yarayacak. Şimdilik sadece listeliyoruz.
+    // Not: id, silme için işimize yarayacak. Şimdilik sadece listeliyoruz.
   { id: crypto.randomUUID(), title: "Inception", category: "Sci-Fi", imdb: 8.8 },
   { id: crypto.randomUUID(), title: "The Dark Knight", category: "Action", imdb: 9.0 },
   { id: crypto.randomUUID(), title: "Interstellar", category: "Sci-Fi", imdb: 8.6 },
   { id: crypto.randomUUID(), title: "Whiplash", category: "Drama", imdb: 8.5 }
-];
+]
 
 // 2) DOM referansları
+
 const form = document.getElementById("movie-form");
 const tbody = document.getElementById("movie-tbody");
 
@@ -24,11 +26,12 @@ const everyGt5El = document.getElementById("every-gt5");
 const someGt9El = document.getElementById("some-gt9");
 
 // 3) Listeyi DOM'a basan fonksiyon
+
 function renderTable(list) {
-  // Güvenli varsayılan: parametre gelmezse global movies'i kullan
+    // Güvenli varsayılan: parametre gelmezse global movies'i kullan
   const data = Array.isArray(list) ? list : movies;
 
-  // Tbody'yi önce temizle
+  // Tbody önce temizle
   tbody.innerHTML = "";
 
   // forEach ile satır üret
