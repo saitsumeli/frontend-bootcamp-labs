@@ -32,7 +32,7 @@ Bu proje **Frontend-Kamp Gün 5** kapsamında yapılmıştır. Amaç:
   - DOM manipülasyonu
   - Array methodları (`forEach`, `reduce`, `map`, `every`, `some`, `filter`)
   - `crypto.randomUUID()` ile benzersiz ID üretimi
-  - `localStorage` ile kalıcı veri yönetimi
+  - `localStorage` ile kalıcı veri yönetimi.
 
 ---
 
