@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mini Envanter & Sepet (Gün 6)</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="container">
+    <h1>Mini Envanter & Sepet</h1>
+    <p class="muted">Gün 6 konularına göre küçük bir envanter ve sepet uygulaması.</p>
+  </header>
+
+  <main class="container grid">
+    <!-- Sol: ürün & filtre -->
+    <section aria-labelledby="filters-title" class="col">
+      <h2 id="filters-title">Arama & Filtre</h2>
+
+      <div class="filters">
+        <input id="search" type="search" placeholder="Ürün ara (metin)..." />
+        <select id="category">
+          <option value="">Tüm kategoriler</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Stationery">Stationery</option>
+          <option value="Kitchen">Kitchen</option>
+        </select>
+
+        <label class="inline">
+          <input id="min500" type="checkbox" />
+          Fiyatı ≥ 500 olanlar
+        </label>
+
+        <label class="inline">
+          <input id="showVat" type="checkbox" />
+          KDV’li fiyatı göster
+        </label>
+      </div>
+
+      <h2>Ürün Listesi</h2>
+      <ul id="productList" class="cards" aria-live="polite"></ul>
+    </section>
+
+    <!-- Sağ: sepet -->
+    <aside aria-labelledby="cart-title" class="col">
+      <h2 id="cart-title">Sepet</h2>
+      <ul id="cartList" class="list"></ul>
+      <div class="cart-summary">
+        <div><strong>Adet:</strong> <span id="cartCount">0</span></div>
+        <div><strong>Toplam:</strong> <span id="cartTotal">₺0</span></div>
+      </div>
+      <button id="restockBtn" class="secondary" disabled>Stok < 3 olanları 3’e tamamla</button>
+    </aside>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
