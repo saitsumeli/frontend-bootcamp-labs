@@ -25,7 +25,7 @@ const $showVat = document.getElementById("showVat");
 // Basit para formatı
 const money = n => `₺${n.toLocaleString("tr-TR")}`;
 
-// KDV’li fiyat (ör: %10 KDV)
+// KDV’li fiyatt (ör: %10 KDV)
 const withVat = n => Math.round(n * 1.10);
 
 // --- Filtre uygulama ---
